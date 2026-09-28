@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รายงาน — Restaurant Ordering</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🍽️ ระบบร้านอาหาร <span>Restaurant Ordering</span></div>
+    <nav><a href="/">จัดการข้อมูล</a><a href="/report" class="active">รายงาน</a></nav>
+  </header>
+  <main class="container">
+    <section class="cards">
+      <div class="metric"><div class="metric-num" id="m_cus">—</div><div class="metric-label">ลูกค้า</div></div>
+      <div class="metric"><div class="metric-num" id="m_item">—</div><div class="metric-label">เมนู</div></div>
+      <div class="metric"><div class="metric-num" id="m_ord">—</div><div class="metric-label">ออเดอร์</div></div>
+      <div class="metric"><div class="metric-num" id="m_sales">—</div><div class="metric-label">ยอดขายรวม</div></div>
+    </section>
+    <section class="card">
+      <h3>📈 เมนูขายดี (Best Sellers)</h3>
+      <div id="popularStatus" class="status"></div>
+      <div class="table-wrap"><table id="popularTable"><thead></thead><tbody></tbody></table></div>
+    </section>
+    <section class="card">
+      <h3>💰 ยอดขายรวมต่อวัน (Daily Sales)</h3>
+      <div id="dailyStatus" class="status"></div>
+      <div class="table-wrap"><table id="dailyTable"><thead></thead><tbody></tbody></table></div>
+    </section>
+    <section class="card">
+      <h3>🧾 ออเดอร์ยอดเกิน 500 บาท (HAVING)</h3>
+      <div id="bigStatus" class="status"></div>
+      <div class="table-wrap"><table id="bigTable"><thead></thead><tbody></tbody></table></div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='report.js') }}"></script>
+</body>
+</html>
